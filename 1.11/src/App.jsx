@@ -7,9 +7,7 @@ const Button= (props) => (
 const Statistics = ({text, value}) => {
   console.log(value)
     return (
-      <div>
-      <p> {text} {value}</p>
-      </div>
+      <td>{text} {value}</td>
     )
 }
 
@@ -41,24 +39,32 @@ const App = () => {
       <Button handleClick= {()=>setBad(bad+1)} text = 'bad'/>
       <h1>statistics</h1>
       <table>
-        <tr> 
-          <td><Statistics text = 'good' value = {good}/></td> 
-        </tr>
-        <tr>
-          <td><Statistics text = 'neutral' value = {neutral}/></td> 
-        </tr>
-        <tr>
-            <Statistics text = 'bad' value = {bad}/>
-        </tr>
-        <tr>
-        <Statistics text = 'total' value = {total}/>
-        </tr>
-        <tr>
-        <Statistics text = 'average' value = {average}/>
-        </tr>
-        <tr>
-        <Statistics text = 'positive' value = {positive}/>
-        </tr>
+        <tbody>
+          <tr> 
+            <Statistics text = 'good'/>
+            <Statistics value = {good}/>
+          </tr>
+          <tr>
+            <Statistics text = 'neutral'/>
+            <Statistics value = {neutral}/>
+          </tr>
+          <tr>
+            <Statistics text = 'bad' />
+            <Statistics value = {bad}/>
+          </tr>
+          <tr>
+            <Statistics text = 'total' />
+            <Statistics value = {total}/>
+          </tr>
+          <tr>
+            <Statistics text = 'average'/>
+            <Statistics value = {average.toFixed(2)}/>
+          </tr>
+          <tr>
+           <Statistics text = 'positive' />
+           <Statistics value = {positive.toFixed(3)}/>% 
+          </tr>
+        </tbody>
       </table>
     </div>
   )
